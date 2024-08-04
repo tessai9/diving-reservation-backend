@@ -1,0 +1,31 @@
+services:
+  app:
+    image: node:22-bookworm
+    environment:
+      DATABASE_HOST: db
+      DATABASE_PORT: 5432
+      DATABASE_USER: diving
+      DATABASE_PASSWORD: pass
+      DATABASE_NAME: app_development.sqlite
+    command: 'npm run start:dev'
+    tty: true
+    working_dir: /app
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: diving
+      POSTGRES_PASSWORD: pass
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  node_modules:
+  db_data:
