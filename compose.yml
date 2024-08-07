@@ -6,7 +6,7 @@ services:
       DATABASE_PORT: 5432
       DATABASE_USER: diving
       DATABASE_PASSWORD: pass
-      DATABASE_NAME: app_development.sqlite
+      DATABASE_NAME: app_development
     command: 'npm run start:dev'
     tty: true
     working_dir: /app
@@ -23,6 +23,7 @@ services:
     environment:
       POSTGRES_USER: diving
       POSTGRES_PASSWORD: pass
+      POSTGRES_DB: app_development
     volumes:
       - db_data:/var/lib/postgresql/data
 
