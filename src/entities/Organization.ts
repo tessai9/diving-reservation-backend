@@ -1,14 +1,14 @@
 import { BaseEntity, Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
-import { ShopUser } from './ShopUser';
+import { License } from './License';
 
 @Entity()
-export class Shop extends BaseEntity {
+export class Organization extends BaseEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string
 
   @Column({ nullable: false })
   name: string
 
-  @OneToMany(() => ShopUser, shopUser => shopUser.shop)
-  shopUsers: ShopUser[]
+  @OneToMany(() => License, license => license.organization)
+  licenses: License[]
 }
