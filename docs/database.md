@@ -55,12 +55,13 @@
 |---|---|---|---|---|
 | id | string | x | id | PK<br>uuid |
 | title | string | x | ツアータイトル ||
-| eventFromDate | date | x | ツアー開始日 ||
-| eventToDate | date | x | ツアー終了日 ||
+| tourComment | text | o | ツアーコメント ||
+| tourFromDate | date | x | ツアー開始日 ||
+| tourToDate | date | x | ツアー終了日 ||
 | status | integer | x | ステータス | 0: 非公開<br>1: 公開 |
 | participantsNumber | integer | x | 参加可能人数 ||
 
-### Participation
+### Participant
 
 | column | type | null | name | memo |
 |---|---|---|---|---|
