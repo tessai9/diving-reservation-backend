@@ -23,7 +23,9 @@ export class ShopsService {
     return await this.shopRepository.insert(shop);
   }
 
-  // async update(id: string, shop: UpdateShopDTO): Promise<UpdateResult> {}
+  async update(id: string, shop: CreateShopDTO): Promise<UpdateResult> {
+    return await this.shopRepository.update(id, shop);
+  }
 
   async remove(id: string): Promise<void> {
     await this.shopRepository.delete(id);

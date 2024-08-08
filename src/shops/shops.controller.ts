@@ -23,8 +23,10 @@ export class ShopsController {
     return await this.service.create(shop);
   }
 
-  // @Patch()
-  // async update(@Body() shop: UpdateShopDTO): Promise<UpdateResult> {}
+  @Patch(':id')
+  async update(@Param('id') id: string, @Body() shop: CreateShopDTO): Promise<UpdateResult> {
+    return await this.service.update(id, shop);
+  }
 
   @Delete(':id')
   async destroy(@Param('id') id: string): Promise<void> {
